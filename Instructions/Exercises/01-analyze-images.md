@@ -24,18 +24,19 @@ Se il repository di codice **Visione di Azure AI** non è già stato clonato nel
 Se non è già disponibile nella sottoscrizione, sarà necessario effettuare il provisioning di una risorsa di **Servizi di Azure AI**.
 
 1. Aprire il portale di Azure all'indirizzo `https://portal.azure.com` ed eseguire l'accesso usando l'account Microsoft associato alla sottoscrizione di Azure.
-2. Nella barra di ricerca superiore cercare *Servizi di Azure AI*, selezionare **Servizi di Azure AI** e creare una risorsa account multiservizio di Servizi di Azure AI con le impostazioni seguenti:
+2. Selezionare **Crea una risorsa**.
+3. Nella barra di ricerca, cercare *Servizi di Azure AI*, selezionare **Servizi di Azure AI** e creare una risorsa dell'account multiservizio di Servizi di Azure AI con le impostazioni seguenti:
     - **Sottoscrizione**: *la sottoscrizione di Azure usata*
     - **Gruppo di risorse**: *scegliere o creare un gruppo di risorse. Se si usa una sottoscrizione con restrizioni, si potrebbe non essere autorizzati a creare un nuovo gruppo di risorse. Usare quello fornito*
-    - **Area**: *Scegliere tra Stati Uniti orientali, Francia centrale, Corea centrale, Europa settentrionale, Asia sud-orientale, Europa occidentale, Stati Uniti occidentali e Asia orientale\**
+    - **Area**: *scegliere tra Stati Uniti orientali, Stati Uniti occidentali, Francia centrale, Corea centrale, Europa settentrionale, Asia sud-orientale, Europa occidentale o Asia orientale\**
     - **Nome**: *immettere un nome univoco*
     - **Piano tariffario**: Standard S0.
 
-    \*Le funzionalità di Visione di Azure AI 4.0 sono attualmente disponibili solo in queste aree.
+    \*I set di funzionalità completi di Visione di Azure AI 4.0 attualmente sono disponibili solamente in queste aree.
 
-3. Selezionare le caselle di controllo necessarie e creare la risorsa.
-4. Attendere il completamento della distribuzione e quindi visualizzare i relativi dettagli.
-5. Al termine della distribuzione, passare alla risorsa e visualizzare la rispettiva pagina **Chiavi ed endpoint**. Nella procedura successiva saranno necessari l'endpoint e una delle chiavi indicate in questa pagina.
+4. Selezionare le caselle di controllo necessarie e creare la risorsa.
+5. Attendere il completamento della distribuzione e quindi visualizzare i relativi dettagli.
+6. Al termine della distribuzione, passare alla risorsa e visualizzare la rispettiva pagina **Chiavi ed endpoint**. Nella procedura successiva saranno necessari l'endpoint e una delle chiavi indicate in questa pagina.
 
 ## Prepararsi all'uso dell’SDK Visione di Azure AI
 
@@ -49,7 +50,7 @@ In questo esercizio si completerà un'applicazione client parzialmente implement
     **C#**
     
     ```
-    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.1
+    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.3
     ```
 
     > **Nota**: Se viene richiesto di installare le estensioni del kit di sviluppo, è possibile chiudere il messaggio in modo sicuro.
@@ -57,8 +58,10 @@ In questo esercizio si completerà un'applicazione client parzialmente implement
     **Python**
     
     ```
-    pip install azure-ai-vision-imageanalysis==1.0.0b1
+    pip install azure-ai-vision-imageanalysis==1.0.0b3
     ```
+
+    > **Suggerimento**: se si esegue questo lab sul proprio computer, sarà necessario installare `matplotlib` e `pillow`.
     
 3. Visualizzare il contenuto della cartella **image-analysis** e notare che include un file per le impostazioni di configurazione:
     - **C#**: appsettings.json
