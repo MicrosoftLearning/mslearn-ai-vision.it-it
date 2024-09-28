@@ -17,7 +17,7 @@ Se non è già stato fatto, è necessario clonare il repository del codice per q
 3. Dopo la clonazione del repository, aprire la cartella in Visual Studio Code.
 4. Attendere il completamento dell'installazione di file aggiuntivi per supportare i progetti in codice C# nel repository.
 
-    > **Nota**: se viene richiesto di aggiungere gli asset necessari per la compilazione e il debug, selezionare **Non adesso**. Se viene visualizzato il messaggio *È stato rilevato un progetto di Funzioni di Azure nella cartella*, è possibile chiuderlo senza problemi.
+    > **Nota**: se viene richiesto di aggiungere gli asset necessari per la compilazione e il debug, selezionare **Non adesso**. Se viene presentato il messaggio *È stato rilevato un progetto di Funzioni di Azure nella cartella*, è possibile chiudere il messaggio in modo sicuro.
 
 ## Effettuare il provisioning di una risorsa di Servizi di Azure AI
 
@@ -49,7 +49,7 @@ In questo esercizio, verrà completata un'applicazione client parzialmente imple
     **C#**
     
     ```
-    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.1
+    dotnet add package Azure.AI.Vision.ImageAnalysis -v 1.0.0-beta.3
     ```
 
     > **Nota**: Se viene richiesto di installare le estensioni del kit di sviluppo, è possibile chiudere il messaggio in modo sicuro.
@@ -57,7 +57,7 @@ In questo esercizio, verrà completata un'applicazione client parzialmente imple
     **Python**
     
     ```
-    pip install azure-ai-vision-imageanalysis==1.0.0b1
+    pip install azure-ai-vision-imageanalysis==1.0.0b3
     ```
 
 3. Visualizzare il contenuto della cartella **read-text** e notare che include un file per le impostazioni di configurazione:
@@ -70,7 +70,7 @@ In questo esercizio, verrà completata un'applicazione client parzialmente imple
 
 ## Usare l'SDK di Visione di Azure AI per leggere il testo da un'immagine
 
-una delle funzionalità dell'**SDK di Visione di Azure AI**consiste nel leggere il testo da un'immagine. In questo esercizio verrà completata un'applicazione client parzialmente implementata che usa l'SDK di Visione di Azure AI per leggere il testo da un'immagine.
+Una delle funzionalità dell'**SDK di Visione di Azure AI** consiste nel leggere il testo da un'immagine. In questo esercizio verrà completata un'applicazione client parzialmente implementata che usa l'SDK di Visione di Azure AI per leggere il testo da un'immagine.
 
 1. La cartella **read-text** contiene un file di codice per l'applicazione client:
 
