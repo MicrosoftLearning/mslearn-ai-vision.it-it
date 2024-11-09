@@ -31,7 +31,7 @@ Se nella sottoscrizione di Azure sono già disponibili risorse di **Visione pers
     - **Area**: *scegliere una qualsiasi area disponibile*
     - **Nome**: *immettere un nome univoco*
     - **Piano tariffario per il training**: F0
-    - **Piano tariffario risorsa previsione**: F0
+    - **Piano tariffario previsione**: F0
 
     > **Nota**: se è già disponibile un servizio di visione personalizzata F0 nella sottoscrizione in uso, selezionare **S0**.
 
