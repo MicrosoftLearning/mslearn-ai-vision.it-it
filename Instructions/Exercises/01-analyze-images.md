@@ -6,7 +6,7 @@ lab:
 
 # Analizzare le immagini con Visione di Azure AI
 
-Visione di Azure AI è una funzionalità di intelligenza artificiale che consente ai sistemi software di interpretare l'input visivo mediante l'analisi di immagini. In Microsoft Azure il servizio **Visione** di Azure AI fornisce modelli predefiniti per attività comuni di visione artificiale, tra cui analisi di immagini per suggerire didascalia e tag, rilevamento di oggetti comuni e persone. È possibile usare il servizio Visione di Azure AI anche per rimuovere lo sfondo o opacizzare gli oggetti in primo piano nelle immagini.
+Visione di Azure AI è una funzionalità di intelligenza artificiale che consente ai sistemi software di interpretare l'input visivo mediante l'analisi di immagini. In Microsoft Azure il servizio **Visione** di Azure AI fornisce modelli predefiniti per attività comuni di visione artificiale, tra cui analisi di immagini per suggerire didascalia e tag, rilevamento di oggetti comuni e persone. 
 
 ## Clonare il repository per questo corso
 
@@ -408,86 +408,6 @@ if result.people is not None:
 3. Salvare le modifiche ed eseguire una volta il programma per ogni file di immagine nella cartella **images**, osservando eventuali oggetti identificati. Dopo ogni esecuzione, vedere il file **objects.jpg** generato nella stessa cartella del file di codice per visualizzare gli oggetti annotati.
 
 > **Nota**: nelle attività precedenti è stato usato un singolo metodo per analizzare l'immagine e quindi è stato aggiunto in modo incrementale codice per analizzare e visualizzare i risultati. L'SDK fornisce inoltre singoli metodi per suggerire didascalie, identificare tag, rilevare oggetti e così via, consentendo quindi di usare il metodo più appropriato per restituire solo le informazioni necessarie, riducendo le dimensioni del payload di dati da restituire. Per altri dettagli, vedere la [documentazione di .NET SDK](https://learn.microsoft.com/dotnet/api/overview/azure/cognitiveservices/computervision?view=azure-dotnet) o la [documentazione di Python SDK](https://learn.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision).
-
-## Rimuovere lo sfondo o opacizzare gli oggetti in primo piano di un'immagine
-
-In alcuni casi, potrebbe essere necessario rimuovere lo sfondo di un'immagine o opacizzare gli oggetti in primo piano di tale immagine. Iniziamo con la rimozione dello sfondo.
-
-1. Nel file di codice individuare la funzione **BackgroundForeground** e nel commento** Rimuovi lo sfondo dall'immagine o genera opacizzazione in primo piano**, aggiungere il codice seguente:
-
-**C#**
-
-```C#
-// Remove the background from the image or generate a foreground matte
-Console.WriteLine($" Background removal:");
-// Define the API version and mode
-string apiVersion = "2023-02-01-preview";
-string mode = "backgroundRemoval"; // Can be "foregroundMatting" or "backgroundRemoval"
-
-string url = $"computervision/imageanalysis:segment?api-version={apiVersion}&mode={mode}";
-
-// Make the REST call
-using (var client = new HttpClient())
-{
-    var contentType = new MediaTypeWithQualityHeaderValue("application/json");
-    client.BaseAddress = new Uri(endpoint);
-    client.DefaultRequestHeaders.Accept.Add(contentType);
-    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
-
-    var data = new
-    {
-        url = $"https://github.com/MicrosoftLearning/mslearn-ai-vision/blob/main/Labfiles/01-analyze-images/Python/image-analysis/{imageFile}?raw=true"
-    };
-
-    var jsonData = JsonSerializer.Serialize(data);
-    var contentData = new StringContent(jsonData, Encoding.UTF8, contentType);
-    var response = await client.PostAsync(url, contentData);
-
-    if (response.IsSuccessStatusCode) {
-        File.WriteAllBytes("background.png", response.Content.ReadAsByteArrayAsync().Result);
-        Console.WriteLine("  Results saved in background.png\n");
-    }
-    else
-    {
-        Console.WriteLine($"API error: {response.ReasonPhrase} - Check your body url, key, and endpoint.");
-    }
-}
-```
-
-**Python**
-
-```Python
-# Remove the background from the image or generate a foreground matte
-print('\nRemoving background from image...')
-    
-url = "{}computervision/imageanalysis:segment?api-version={}&mode={}".format(endpoint, api_version, mode)
-
-headers= {
-    "Ocp-Apim-Subscription-Key": key, 
-    "Content-Type": "application/json" 
-}
-
-image_url="https://github.com/MicrosoftLearning/mslearn-ai-vision/blob/main/Labfiles/01-analyze-images/Python/image-analysis/{}?raw=true".format(image_file)  
-
-body = {
-    "url": image_url,
-}
-    
-response = requests.post(url, headers=headers, json=body)
-
-image=response.content
-with open("background.png", "wb") as file:
-    file.write(image)
-print('  Results saved in background.png \n')
-```
-    
-2. Salvare le modifiche ed eseguire una volta il programma per ogni file di immagine nella cartella **images**, aprendo il file **background.jpg** generato nella stessa cartella del file di codice per ogni immagine.  Si noterà che lo sfondo è stato rimosso da ognuna delle immagini.
-
-Verrà ora generata un’opacizzazione in primo piano per le immagini.
-
-3. Nel file di codice individuare la funzione **BackgroundForeground** e nel commento **Definisci la versione API e la modalità** modificare la variabile modalità in `foregroundMatting`.
-
-4. Salvare le modifiche ed eseguire una volta il programma per ogni file di immagine nella cartella **images**, aprendo il file **background.jpg** generato nella stessa cartella del file di codice per ogni immagine.  Si noterà che nelle immagini è stata generata un’opacizzazione in primo piano.
 
 ## Pulire le risorse
 
