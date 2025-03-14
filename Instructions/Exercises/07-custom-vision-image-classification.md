@@ -46,7 +46,7 @@ In questo esercizio si creeranno le risorse di **Visione personalizzata** per il
 
 Per eseguire il training di un modello di classificazione immagini, è necessario creare un progetto Visione personalizzata basato sulla risorsa di training. A questo scopo, si userà il portale di Visione personalizzata.
 
-1. In Visual Studio Code, visualizzare le immagini di training nella cartella **07-custom-vision-image-classification/training-images** in cui è stato clonato il repository. Questa cartella contiene sottocartelle di immagini di mele, banane e arance.
+1. In Visual Studio Code, visualizzare le immagini di formazione nella cartella **LabFiles/07-custom-vision-image-classification/training-images** in cui è stato clonato il repository. Questa cartella contiene sottocartelle di immagini di mele, banane e arance.
 2. In una nuova scheda del browser aprire il portale di Visione personalizzata all'indirizzo `https://customvision.ai`. Se richiesto, accedere con l'account Microsoft associato alla sottoscrizione di Azure e acconsentire alle condizioni d'uso.
 3. Nel portale Visione personalizzata, creare un nuovo progetto con le impostazioni seguenti:
     - **Nome**: Classify Fruit
@@ -55,7 +55,7 @@ Per eseguire il training di un modello di classificazione immagini, è necessari
     - **Tipi di progetto**: classificazione
     - **Tipi di classificazione**: Multiclasse (un tag per immagine)
     - **Domini**: Food
-4. Nel nuovo progetto fare clic su **\[+\] Aggiungi immagini** e selezionare tutti i file della cartella **training-images/apple** visualizzata in precedenza. Caricare quindi i file di immagine specificando il tag *apple*, come di seguito:
+4. Nel nuovo progetto fare clic su **\[+\] Aggiungi immagini** e selezionare tutti i file della cartella **LabFiles/07-custom-vision-image-classification/training-images/apple** visualizzata in precedenza. Caricare quindi i file di immagine specificando il tag *apple*, come di seguito:
 
 ![Caricare la mela con il tag apple](../media/upload_apples.jpg)
    
