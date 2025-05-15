@@ -57,7 +57,7 @@ Per eseguire il training di un modello di rilevamento oggetti, è necessario cre
 
 Per eseguire il training di un modello di rilevamento oggetti, è necessario caricare immagini contenenti le classi che si desidera far identificare al modello e contrassegnarle per indicare i rettangoli delimitatori per ogni istanza dell'oggetto.
 
-1. In Visual Studio Code visualizzare le immagini di training nella cartella **03-object-detection/training-images** in cui è stato clonato il repository. Questa cartella contiene immagini di frutta.
+1. In Visual Studio Code visualizzare le immagini di formazione nella cartella **Labfiles/03-object-detection/training-images** in cui è stato clonato il repository. Questa cartella contiene immagini di frutta.
 2. Nel portale Visione personalizzata, nel tuo progetto di rilevamento degli oggetti, seleziona **Aggiungi immagini** e carica tutte le immagini della cartella estratta.
 3. Dopo aver caricato le immagini, selezionare la prima per aprirla.
 4. Posizionare il mouse su qualsiasi oggetto nell'immagine fino a quando viene visualizzata un'area rilevata automaticamente come nell'immagine seguente. Quindi selezionare l'oggetto e, se necessario, ridimensionare l'area per circondarlo.
@@ -89,7 +89,7 @@ Per eseguire il training di un modello di rilevamento oggetti, è necessario car
 1. Fare clic sull'icona delle *impostazioni* (&#9881;) in alto a destra nella pagina **Immagini training** nel portale di Visione personalizzata per visualizzare le impostazioni del progetto.
 2. In **Generale** (sulla sinistra) prendere nota del valore di **ID progetto** che identifica in modo univoco questo progetto.
 3. A destra, in **Risorse** osservare la chiave e l'endpoint. Questi dati sono relativi alla risorsa di *training*. È anche possibile ottenere queste informazioni visualizzando la risorsa nel portale di Azure.
-4. Nella cartella **03-object-detection** in Visual Studio Code espandere la cartella **C-Sharp** o **Python** in base al linguaggio scelto.
+4. In Visual Studio Code, nella cartella **Labfiles/03-object-detection**, espandere la cartella **C-Sharp** o **Python** a seconda del linguaggio scelto.
 5. Fare clic con il pulsante destro del mouse sulla cartella **train-detector** e aprire un terminale integrato. Installare quindi il pacchetto Training di Visione personalizzata eseguendo il comando appropriato per il linguaggio scelto:
 
 **C#**
@@ -165,7 +165,7 @@ A questo punto è possibile pubblicare il modello con training per poterlo usare
 
 A questo punto, dopo aver pubblicato il modello di classificazione immagini, è possibile usarlo da un'applicazione client. Anche questa volta, è possibile scegliere di usare **C#** o **Python**.
 
-1. In Visual Studio Code passare alla cartella **03-object-detection** e nella cartella relativa al linguaggio preferito (**C-Sharp** o **Python**) espandere la cartella **test-detector**.
+1. In Visual Studio Code passare alla cartella **Labfiles/03-object-detection** e nella cartella della lingua preferita (**C-Sharp** o **Python**), espandere la cartella **test-detector**.
 2. Fare clic con il pulsante destro del mouse sulla cartella **test-detector** e aprire un terminale integrato. Immettere quindi il comando specifico dell'SDK seguente per installare il pacchetto Previsione di Visione personalizzata:
 
 **C#**
