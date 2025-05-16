@@ -44,7 +44,7 @@ In questo esercizio si completerà un'applicazione client parzialmente implement
 
 > **Nota**: è possibile scegliere di usare l'SDK per **C#** o **Python**. Nella procedura seguente eseguire le azioni appropriate per il linguaggio scelto.
 
-1. Nel riquadro **Esplora risorse** di Visual Studio Code passare alla cartella **04-face** ed espandere la cartella **C-Sharp** o **Python** in base al linguaggio scelto.
+1. In Visual Studio Code, nel riquadro **Explorer**, passare alla cartella **Labfiles/04-face** ed espandere la cartella **C-Sharp** o **Python** a seconda del linguaggio scelto.
 2. Fare clic con il pulsante destro del mouse sulla cartella **computer-vision** e aprire un terminale integrato. Installare quindi il pacchetto SDK Visione di Azure AI eseguendo il comando appropriato per il linguaggio scelto:
 
     **C#**
@@ -203,7 +203,7 @@ Se si vuole visualizzare il punteggio di attendibilità di tutte le persone rile
 
 Mentre il servizio **Visione di Azure AI** offre funzionalità di rilevamento del viso di base (oltre a molte altre funzionalità di analisi delle immagini), il servizio **Viso** offre funzionalità più complete per l'analisi e il riconoscimento facciale.
 
-1. Nel riquadro **Esplora risorse** di Visual Studio Code passare alla cartella **04-face** ed espandere la cartella **C-Sharp** o **Python** in base al linguaggio scelto.
+1. In Visual Studio Code, nel riquadro **Explorer**, passare alla cartella **Labfiles/04-face** ed espandere la cartella **C-Sharp** o **Python** a seconda del linguaggio scelto.
 2. Fare clic con il pulsante destro del mouse sulla cartella **face-api** e aprire un terminale integrato. Installare quindi il pacchetto Face SDK eseguendo il comando appropriato per il linguaggio scelto:
 
     **C#**

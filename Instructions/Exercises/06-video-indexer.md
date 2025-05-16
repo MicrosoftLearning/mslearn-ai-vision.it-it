@@ -82,7 +82,7 @@ Il processo di indicizzazione estrae informazioni dettagliate dal video che è p
 
 Il portale di Video Indexer è un'interfaccia utile per gestire i progetti di indicizzazione video. È tuttavia possibile che in alcuni casi si voglia rendere il video e le relative informazioni dettagliate disponibili per persone che non hanno accesso all'account di Video Indexer. Video Indexer fornisce widget che è possibile incorporare in una pagina Web per tale scopo.
 
-1. In Visual Studio Code, nella cartella **06-video-indexer**, aprire **analyze-video.html**. Si tratta di una pagina HTML di base a cui si aggiungeranno i widget **Player** e**Informazioni dettagliate** di Video Indexer. Si noti il riferimento allo script **vb.widgets.mediator.js** nell'intestazione: questo script consente l'interazione di più widget di Video Indexer nella pagina.
+1. In Visual Studio Code, nella cartella **Labfiles/06-video-indexer**, aprire **analyze-video.html**. Si tratta di una pagina HTML di base a cui si aggiungeranno i widget **Player** e**Informazioni dettagliate** di Video Indexer. Si noti il riferimento allo script **vb.widgets.mediator.js** nell'intestazione: questo script consente l'interazione di più widget di Video Indexer nella pagina.
 2. Nel portale di Video Indexer tornare nella pagina **File multimediali** e aprire il video **Intelligenza artificiale responsabile**.
 3. Sotto il lettore video selezionare **&lt;/&gt; Incorpora** per visualizzare il codice iframe HTML per incorporare i widget.
 4. Nella finestra **Incorpora e condividi** selezionare il widget **Player**, impostare le dimensioni del video su 560 x 315 e quindi copiare il codice di incorporamento negli Appunti.
@@ -117,7 +117,7 @@ Tutte le interazioni con l'API REST di Video Indexer seguono lo stesso modello:
 - Viene effettuata una richiesta iniziale al metodo **AccessToken** con la chiave API nell'intestazione per ottenere un token di accesso.
 - Le richieste successive usano il token di accesso per l'autenticazione quando si chiamano i metodi REST per lavorare con i video.
 
-1. In Visual Studio Code, nella cartella **06-video-indexer**, aprire **get-videos.ps1**.
+1. In Visual Studio Code, nella cartella **Labfiles/06-video-indexer**, aprire **get-videos.ps1**.
 2. Nello script di PowerShell sostituire i segnaposto **YOUR_ACCOUNT_ID** e **YOUR_API_KEY** con i valori dell'ID account e della chiave API identificati in precedenza.
 3. Si noti che il valore di *location* per un account gratuito è "trial". Se è stato creato un account di Video Indexer senza restrizioni (con una risorsa di Azure associata), è possibile cambiare questa località impostando l'area di Azure in cui è stato effettuato il provisioning della risorsa di Azure, ad esempio "eastus".
 4. Esaminare il codice dello script, notando che richiama due metodi REST: uno per ottenere un token di accesso e un altro per elencare i video presenti nell'account.
