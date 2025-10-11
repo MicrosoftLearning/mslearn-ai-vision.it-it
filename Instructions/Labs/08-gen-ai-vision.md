@@ -34,9 +34,9 @@ Un *progetto* Azure AI offre un'area di lavoro collaborativa per lo sviluppo del
 
 > **Nota**: i progetti Fonderia AI possono essere basati su una risorsa *Fonderia Azure AI* , che fornisce l'accesso ai modelli di intelligenza artificiale (tra cui Azure OpenAI), a Servizi di Azure AI e ad altre risorse per lo sviluppo di agenti di intelligenza artificiale e soluzioni di chat. In alternativa, i progetti possono essere basati sulle risorse *Hub IA*, che includono connessioni alle risorse di Azure per l'archiviazione sicura, il calcolo e gli strumenti specializzati. I progetti basati su Fonderia Azure AI sono ideali per gli sviluppatori che vogliono gestire le risorse per lo sviluppo di agenti IA o di app di chat. I progetti basati su Hub IA sono più adatti per i team di sviluppo aziendale che lavorano su soluzioni di intelligenza artificiale complesse.
 
-1. Nella home page, nella sezione **Esplora modelli e funzionalità**, cercare il modello `Phi-4-multimodal-instruct`, che verrà usato nel progetto.
+1. Nella home page, nella sezione **Esplora modelli e funzionalità**, cercare il modello `gpt-4o`, che verrà usato nel progetto.
 
-1. Nei risultati della ricerca selezionare il modello **Phi-4-multimodal-instruct** per visualizzarne i dettagli e quindi nella parte superiore della pagina per il modello selezionare **Usa questo modello**.
+1. Nei risultati della ricerca, selezionare il modello **gpt-4o** per visualizzarne i dettagli e quindi nella parte superiore della pagina selezionare **Usa questo modello**.
 
 1. Quando viene richiesto di creare un progetto, immettere un nome valido per il progetto ed espandere **Opzioni avanzate**.
 
@@ -48,9 +48,9 @@ Un *progetto* Azure AI offre un'area di lavoro collaborativa per lo sviluppo del
 
     > \* Alcune risorse Azure AI sono limitate da quote di modelli regionali. In caso di superamento di un limite di quota più avanti nell'esercizio, potrebbe essere necessario creare un'altra risorsa in un'area diversa.
 
-1. Selezionare **Crea** e attendere la creazione del progetto, inclusa la distribuzione del modello Phi-4-multimodal-instruct selezionato.
+1. Selezionare **Crea** e attendere la creazione del progetto, inclusa la distribuzione del modello gpt-4o model selezionato.
 
-    > Nota: A seconda della selezione del modello, è possibile che si ricevano richieste aggiuntive durante il processo di creazione del progetto. Accettare le condizioni e finalizzare la distribuzione.
+    > <font color="red"><b>IMPORTANTE</b>:</font> A seconda della quota disponibile per i modelli gpt-4o, è possibile che venga visualizzata una richiesta aggiuntiva per distribuire il modello in una risorsa in un'area diversa. In questo caso, eseguire l'operazione usando le impostazioni predefinite. Più avanti nell'esercizio <b><u>non</u></b> si potrà usare l'endpoint del progetto predefinito. È necessario usare l'URI di destinazione specifico del modello.
 
 1. Al termine della creazione del progetto, il modello verrà visualizzato nella pagina **Modelli ed endpoint**:
 
@@ -64,7 +64,7 @@ Un *progetto* Azure AI offre un'area di lavoro collaborativa per lo sviluppo del
 
 1. In una nuova scheda del browser, scaricare [mango.jpeg](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg) da `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg` e salvarlo in una cartella nel file system locale.
 
-1. Nella pagina playground della chat, nel riquadro **Configurazione**, assicurarsi che sia selezionato il modello di distribuzione **Phi-4-multimodal-instruct**.
+1. Nel riquadro **Configurazione** della pagina del playground della chat verificare che sia selezionata la distribuzione modello **gpt-4o**.
 
 1. Nel pannello principale della sessione di chat, sotto la casella di input della chat, usare il pulsante allega (**&#128206;**) per caricare il file di immagine *mango.jpeg*, quindi aggiungere il testo `What desserts could I make with this fruit?` e inviare la richiesta.
 
@@ -78,10 +78,6 @@ Dopo aver distribuito il modello, è possibile usare la distribuzione in un'appl
 
 ### Preparare la configurazione dell'applicazione
 
-1. Nel Portale Fonderia Azure AI visualizzare la pagina **Panoramica** per il progetto.
-
-1. Nell'area **Endpoint e chiavi** assicurarsi che sia selezionata la libreria di **Fonderia Azure AI** e notare l'**Endpoint del progetto di Fonderia Azure AI**. Questa stringa di connessione verrà usata per connettersi al progetto in un'applicazione client.
-
 1. Aprire una nuova scheda del browser (mantenendo aperto il Portale Fonderia Azure AI nella scheda esistente). In una nuova scheda del browser, passare al [portale di Azure](https://portal.azure.com) su `https://portal.azure.com`, accedendo con le credenziali di Azure se richiesto.
 
     Chiudere eventuali notifiche di benvenuto per visualizzare la pagina iniziale del portale di Azure.
@@ -91,8 +87,6 @@ Dopo aver distribuito il modello, è possibile usare la distribuzione in un'appl
     Cloud Shell fornisce un'interfaccia della riga di comando in un riquadro nella parte inferiore del portale di Azure. È possibile ridimensionare o ingrandire questo riquadro per ottimizzare l'esperienza d'uso.
 
     > **Nota**: se in precedenza è stata creata una sessione Cloud Shell che usa un ambiente *Bash*, passare a ***PowerShell***.
-
-    > **Nota**: Se il portale chiede di selezionare una risorsa di archiviazione per salvare in modo permanente i file, scegliere **Nessun account di archiviazione richiesto**, selezionare la sottoscrizione in uso e premere **Applica**.
 
 1. Nella barra degli strumenti di Cloud Shell scegliere **Vai alla versione classica** dal menu **Impostazioni**. Questa operazione è necessaria per usare l'editor di codice.
 
@@ -129,7 +123,9 @@ Dopo aver distribuito il modello, è possibile usare la distribuzione in un'appl
 
     Il file viene aperto in un editor di codice.
 
-1. Nel file di codice sostituire il segnaposto **your_project_endpoint** con l'endpoint del progetto di Fonderia (copiato dalla pagina **Panoramica** del progetto nel Portale Fonderia Azure AI) e il segnaposto **your_model_deployment** con il nome assegnato alla distribuzione del modello Phi-4-multimodal-instruct.
+    > <font color="red"><b>IMPORTANTE</b>:</font> Se il modello gpt-4o è stato distribuito nell'area predefinita per il progetto, è possibile usare il <b>progetto di Fonderia Azure AI</b> o l'endpoint di <b>Azure OpenAI</b> nella pagina <b>Panoramica</b> per connettersi al modello. Se la quota non è sufficiente e il modello è stato distribuito in un'altra area, nella pagina <b>Modelli ed endpoint</b> selezionare il modello e usare l'<b>URI di destinazione</b> per il modello.
+
+1. Nel file di codice sostituire il segnaposto **your_project_endpoint** con l'endpoint appropriato per il modello e il segnaposto **your_model_deployment** con il nome assegnato alla distribuzione del modello gpt-4o.
 
 1. Dopo aver sostituito i segnaposto con l'editor di codice, usare il comando **CTRL+S** o **Fare clic con il pulsante destro del mouse > Salva** per salvare le modifiche e quindi usare il comando **CTRL+Q** o **Fare clic con il pulsante destro del mouse > Esci** per chiudere l'editor di codice mantenendo aperta la riga di comando di Cloud Shell.
 
