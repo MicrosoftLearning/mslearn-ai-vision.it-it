@@ -1,3 +1,5 @@
+**⚠️ This GitHub repo will retire on 30th December 2025.** 
+
 # Sviluppare soluzioni di Visione artificiale in Azure
 
 Gli esercizi in questo repository sono progettati per offrire un'esperienza di apprendimento pratica in cui verranno esaminate le attività comuni eseguite dagli sviluppatori durante la creazione di soluzioni di visione artificiale con Microsoft Azure.
